@@ -17,12 +17,14 @@ namespace hatodikhet
     public partial class Form1 : Form
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
+        BindingList<string> Currencies = new BindingList<string>();
         public Form1()
         {
             InitializeComponent();
             GetExchangeRates();
             CreateChart();
             dataGridView1.DataSource = Rates;
+            ComboBox.DataSource = Currencies;
         }
 
     private void GetExchangeRates()
@@ -85,6 +87,21 @@ namespace hatodikhet
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            CreateChart();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            CreateChart();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CreateChart();
         }
     }
 }
