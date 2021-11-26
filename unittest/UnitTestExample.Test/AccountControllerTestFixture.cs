@@ -26,7 +26,7 @@ namespace UnitTestExample.Test
             var result = accountController.ValidateEmail(email);
 
             // Assert
-            Assert.AreEqual(result, expectedresult);
+            Assert.AreEqual(expectedresult, result);
         }
 
         [
@@ -49,7 +49,21 @@ namespace UnitTestExample.Test
             var result = accountController.ValidatePassword(password);
 
             // Assert
-            Assert.AreEqual(result, expectedresult);
+            Assert.AreEqual(expectedresult, result);
+        }
+
+        public void TestRegisterHappyPath(string email, string password)
+        {
+            // Arrange
+            var accountController = new AccountController();
+
+            // Act 
+            var result = accountController.Register(email, password);
+
+            // Assert
+            Assert.AreEqual(result.Email, email);
+            Assert.AreEqual(result.Password, password);
+            Assert.AreNotEqual(Guid.Empty, result.ID);
         }
     }
 }
