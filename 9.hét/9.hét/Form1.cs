@@ -80,7 +80,7 @@ namespace _9.hét
                     deathProbabilities.Add(new DeathProbability()
                     {
                         Age = int.Parse(line[0]),
-                        P = double.Parse(line[2]),
+                        P = double.Parse(line[2].Replace(",", ".")),
                         Gender = (Gender)Enum.Parse(typeof(Gender), line[1])
                     });
                 }
