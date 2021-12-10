@@ -30,22 +30,35 @@ namespace week10
         private void InitializeComponent()
         {
             this.lblGeneration = new System.Windows.Forms.Label();
+            this.btnStart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblGeneration
             // 
             this.lblGeneration.AutoSize = true;
-            this.lblGeneration.Location = new System.Drawing.Point(217, 90);
+            this.lblGeneration.Location = new System.Drawing.Point(204, 19);
             this.lblGeneration.Name = "lblGeneration";
             this.lblGeneration.Size = new System.Drawing.Size(66, 13);
             this.lblGeneration.TabIndex = 0;
             this.lblGeneration.Text = "1. generáció";
+            // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(207, 36);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.TabIndex = 1;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Visible = false;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblGeneration);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -57,6 +70,7 @@ namespace week10
         #endregion
 
         private System.Windows.Forms.Label lblGeneration;
+        private System.Windows.Forms.Button btnStart;
     }
 }
 
