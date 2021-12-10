@@ -42,6 +42,13 @@ namespace week10
         private void Gc_GameOver(object sender)
         {
             generation++;
+            lblGeneration.Text = generation.ToString() + ". generáció";
+
+            var playerList = from p in gc.GetCurrentPlayers()
+                             orderby p.GetFitness() descending
+                             select p;
+            var topPerformers = playerList.Take(populationSize / 2).ToList();
+
         }
     }
 }
